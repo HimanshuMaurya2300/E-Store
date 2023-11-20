@@ -1,0 +1,60 @@
+@import "../../css-config/mixins.scss";
+
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+
+
+    .container-box {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 300px;
+        width: 400px;
+
+
+        .msgSymbol {
+            color: green;
+        }
+
+
+
+        .messageheading {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        
+        .message{
+            text-align: center;
+        }
+
+
+        button {
+            outline: 0;
+            border: 0;
+            height: 40px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            background-color: dodgerblue;
+            border-bottom: 3px solid dodgerblue;
+            margin-top: 20px;
+
+            @include md {
+                width: 120px;
+            }
+        }
+    }
+}
