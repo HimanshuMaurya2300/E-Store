@@ -19,8 +19,8 @@ const CartItem = () => {
                     <div key={item.id} className="cart-product">
 
                         <div className="img-container">
-                            <img src={process.env.REACT_APP_DEV_URL + item.attributes.img.data[0].attributes.url} alt="" />
-                            {/* <img src={item.attributes.img.data[0].attributes.url} alt="" /> */}
+                            {/* <img src={process.env.REACT_APP_DEV_URL + item.attributes.img.data[0].attributes.url} alt="" /> */}
+                            <img src={item.attributes.img.data[0].attributes.url} alt="" />
                         </div>
 
                         <div className="prod-details">
