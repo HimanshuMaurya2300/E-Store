@@ -17,13 +17,13 @@ const Product = ({ id, data }) => {
 
             <div className="thumbnail">
 
-                {/* {data?.img?.data &&
-                    <img src={process.env.REACT_APP_DEV_URL + data?.img?.data[0]?.attributes?.url} alt="" />
-                } */}
-                {/* <img src={process.env.REACT_APP_DEV_URL + data?.img?.data[0]?.attributes?.url} alt="" /> */}
                 {data?.img?.data &&
-                    <img src={data?.img?.data[0]?.attributes?.url} alt="" />
+                    <img src={process.env.REACT_APP_DEV_URL + data?.img?.data[0]?.attributes?.url} alt="" />
                 }
+                {/* <img src={process.env.REACT_APP_DEV_URL + data?.img?.data[0]?.attributes?.url} alt="" /> */}
+                {/* {data?.img?.data &&
+                    <img src={data?.img?.data[0]?.attributes?.url} alt="" />
+                } */}
                 {/* <img src={data?.img?.data[0]?.attributes?.url} alt="" /> */}
 
             </div>
