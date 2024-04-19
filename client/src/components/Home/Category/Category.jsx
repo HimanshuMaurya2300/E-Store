@@ -9,7 +9,6 @@ const Category = ({ categories }) => {
     return (
         <div className="shop-by-category">
             <div className="categories">
-
                 {
                     categories?.data?.map((item) => (
 
@@ -27,7 +26,6 @@ const Category = ({ categories }) => {
                         </div>
                     ))
                 }
-
             </div>
         </div>
     )

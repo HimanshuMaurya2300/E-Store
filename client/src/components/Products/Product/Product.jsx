@@ -10,8 +10,6 @@ const Product = ({ id, data }) => {
         return
     }
 
-    console.log(data)
-
     return (
         <div className="product-card" onClick={() => navigate('/product/' + id)}>
 
