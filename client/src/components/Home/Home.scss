@@ -1,11 +1,18 @@
 @import "../../css-config/mixins.scss";
 
 
+.loader {
+    position: absolute;
+    top: 15%;
+    z-index: 99999;
+    left: 50%;
+}
+
 .main-content {
     max-width: calc(100% - 20px);
     margin: 0 auto;
 
-    @include md{
+    @include md {
         max-width: 1200px;
     }
 }

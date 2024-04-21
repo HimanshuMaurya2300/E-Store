@@ -11,6 +11,7 @@ const AppContext = ({ children }) => {
     const [cartCount, setCartCount] = useState(0)
     const [cartSubTotal, setCartSubTotal] = useState(0)
     const [scrollLock, setScrollLock] = useState(false)
+    const [axiosError, setAxiosError] = useState(false)
 
     const location = useLocation()
 
@@ -85,8 +86,6 @@ const AppContext = ({ children }) => {
     }
 
 
-
-
     const handlePageScroll = () => {
 
         if (scrollLock === false) {
@@ -96,9 +95,6 @@ const AppContext = ({ children }) => {
             document.body.style.overflow = 'visible';
         }
     }
-
-
-
 
 
     return (
@@ -119,7 +115,9 @@ const AppContext = ({ children }) => {
                 handleCartProductQuantity,
                 scrollLock,
                 setScrollLock,
-                handlePageScroll
+                handlePageScroll,
+                axiosError,
+                setAxiosError
             }}
         >
             {children}

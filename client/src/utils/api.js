@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const params = {
-
     headers: {
         Authorization: 'bearer ' + process.env.REACT_APP_STRAPI_KEY,
     },
@@ -9,7 +8,6 @@ const params = {
 
 
 export const fetchDataFromApi = async (url) => {
-
     try {
         const { data } = await axios.get(process.env.REACT_APP_DEV_URL + url, params)
         return data
@@ -19,7 +17,6 @@ export const fetchDataFromApi = async (url) => {
         return error
     }
 }
-
 
 
 
