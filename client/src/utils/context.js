@@ -20,8 +20,6 @@ const AppContext = ({ children }) => {
     }, [location])
 
 
-
-
     useEffect(() => {
 
         let count = 0;

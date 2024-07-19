@@ -17,7 +17,7 @@ const Category = ({ categories }) => {
                             {/* testing */}
                             {/* <img src={process.env.REACT_APP_DEV_URL + item?.attributes.img.data.attributes.url} alt="" /> */}
 
-                            <img src={item.attributes.img.data.attributes.url} alt="" />
+                            <img src={item.attributes.img.data[0].attributes.url} alt="" />
 
                             <div className="title">
                                 <span>{item.attributes.title}</span>

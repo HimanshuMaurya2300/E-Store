@@ -800,7 +800,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    img: Attribute.Media;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     products: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -824,37 +824,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiCheckingChecking extends Schema.CollectionType {
-  collectionName: 'checkings';
-  info: {
-    singularName: 'checking';
-    pluralName: 'checkings';
-    displayName: 'checking';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    img: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::checking.checking',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::checking.checking',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -868,7 +837,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     desc: Attribute.Text;
-    img: Attribute.Media;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     price: Attribute.Decimal;
     categories: Attribute.Relation<
       'api::product.product',
@@ -912,7 +881,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
-      'api::checking.checking': ApiCheckingChecking;
       'api::product.product': ApiProductProduct;
     }
   }

@@ -15,35 +15,30 @@ const Home = () => {
     const [loader, setLoader] = useState(false)
 
     useEffect(() => {
+        setLoader(true);
 
-        setLoader(true)
+        const fetchInitialData = async () => {
+            try {
+                const productsResponse = await fetchDataFromApi('/api/products?populate=*');
+                const categoriesResponse = await fetchDataFromApi('/api/categories?populate=*');
 
-        const getProducts = () => {
-            fetchDataFromApi('/api/products?populate=*').then(res => {
-                if (res.name === 'AxiosError') {
-                    setAxiosError(true)
+                console.log(productsResponse)
+                console.log(categoriesResponse)
+
+                setProducts(productsResponse);
+                setCategories(categoriesResponse);
+            } catch (error) {
+                if (error.name === 'AxiosError') {
+                    setAxiosError(true);
                 }
-                setProducts(res)
-            })
-        }
+            } finally {
+                setLoader(false);
+            }
+        };
 
-        const getCategories = () => {
+        fetchInitialData();
 
-            fetchDataFromApi('/api/categories?populate=*').then(res => {
-                setCategories(res)
-                // console.log(res)
-            })
-        }
-
-        getCategories()
-        getProducts()
-
-        if (products !== undefined && categories !== undefined) {
-            setLoader(false)
-        }
-
-    }, [setCategories, setProducts, setAxiosError, products, categories])
-
+    }, [setCategories, setProducts, setAxiosError]);
 
     return (
         <div>
